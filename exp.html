@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unsorted Arrays vs Binary Search</title>
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <style>
+         .exp {
+             display: none;
+         }
+
+         table {
+             font-family: arial, sans-serif;
+             border-collapse: collapse;
+             width: 100%;
+             text-align: center;
+         }
+
+         th {
+             background-color: #2780C6;
+             text-align: center;
+             color: #fff;
+         }
+
+         #headings {
+             background-color: #2780C6;
+             text-align: center;
+             color: #fff;
+         }
+
+         td {
+             border: 1px solid #dddddd;
+             padding: 8px;
+             text-align: center;
+             height: 20px;
+         }
+
+         tr:hover {
+             background-color: #ddd;
+         }
+        </style>
+    </head>
+
+    <body>
+        <div class="exp" title="Unsorted Arrays vs Binary Search">
+
+            <div class="longt">
+                <h1 class="hlongt"> Introduction to Linear Searching and Binary Searching </h1>
+            </div>
+
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>1 hour</p>
+                    </div>
+                </div>
+
+                <div class="art req" title="Searching Introduction">
+                    <div class="longt">
+                        <h2 class="hlongt">Introduction</h2>
+                    </div>
+                    <div class="description">
+                        <p> Introduction video for Searching</p>
+                    </div>
+                </div>
+
+                <div class="art txt" title="Prerequisites">
+                    <div class="longt">
+                        <h2 class="hlongt">Prerequisites of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>
+                            This experiment requires you to have basic knowledge about :</p>
+                        <ul>
+                            <li><a href="https://en.wikipedia.org/wiki/Sorting_algorithm">Arrays or Lists</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Sorting_algorithm">Sorting</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Time_complexity">Notion of Time and Space
+                                complexity</a></li>
+                        </ul>
+                        <p>And above all, a curiosity to learn and explore..!</p>
+                    </div>
+                </div>
+
+                <div class="art txt" title="Overview">
+                    <div class="longt">
+                        <h2 class="hlongt">Overview of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li>
+                                The aim of this experiment
+                                is to understand the
+                                concepts of Searching. The
+                                experiment elaborates on
+                                different techniques of
+                                searching namely the Linear
+                                Search and Binary Search,
+                                understanding the
+                                requirements of both and
+                                analysing the time
+                                complexity.
+                            </li>
+                            <li>
+                                The experiment features a
+                                series of modules with video
+                                lectures, interactive
+                                demonstrations, simulations,
+                                hands-on practice exercises
+                                and quizzes to self analyze.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="art txt" title="Learning Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Learning Objectives of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        In this experiment, you will be able to do the following:<br>
+                        <ul>
+
+                            <li>Given an unsorted array of
+                                numbers, search for a given
+                                number in the array using
+                                linear search.
+                            </li>
+                            <li>Speed up the searching
+                                process by sorting the array
+                                and using binary search
+                                instead.
+                            </li>
+                            <li> Demonstrate knowledge of
+                                time complexity of Linear
+                                and Binary Search by
+                                counting the number of
+                                operations required in both
+                                of the algorithms.
+                            </li>
+                            <li>
+                                Understand the applications
+                                of searching and the need
+                                for faster searching.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="art txt" title="Modules and Weightage">
+                    <div class="longt">
+                        <h2 class="hlongt">Experiment Modules & their Weightage</h2>
+                    </div>
+                    <div class="art-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center">Module</th>
+                                    <th style="text-align:center">Weightage</th>
+                                    <th style="text-align:center">Expectation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pre-test</td>
+                                    <td>10%</td>
+                                    <td>Solve All Questions</td>
+                                </tr>
+                                <tr>
+                                    <td>Linear Search</td>
+                                    <td>25%</td>
+                                    <td>Understand the linear search algorithm</td>
+                                </tr>
+                                <tr>
+                                    <td>Binary Search</td>
+                                    <td>25%</td>
+                                    <td>Understand the binary search algorithm on sorted lists</td>
+                                </tr>
+                                <tr>
+                                    <td>Analysis</td>
+                                    <td>25%</td>
+                                    <td>Understand the time and space complexity</td>
+                                </tr>
+                                <tr>
+                                    <td>Post-test</td>
+                                    <td>15%</td>
+                                    <td>Solve all Questions</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lu" title="Pre-test">
+                <div class="longt">
+                    <h1 class="hlongt">Pre-test of the Experiment</h1>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Objectives">
+                        <div class="longt">
+                            <h2 class="hlongt">Instructions for Pre-Test</h2>
+                        </div>
+                        <div class="art-body">
+                            <ul>
+                                <li>Pretest includes questions on
+                                    <strong>sorted lists, time complexity and
+                                        space complexity.</strong></li>
+                                <li>If you want to revise these topics
+                                    before taking the quiz, go through the Recap module first.</li>
+                                <li>Read the questions in
+                                    the quiz section and select the
+                                    correct option from the ones
+                                    provided. Please note that some
+                                    <strong>questions may have more than one
+                                        correct response.</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Recap">
+                    <div class="longt">
+                        <h2 class="hlongt">Quick look at Sorted Lists, Time and Space Complexity</h2>
+                    </div>
+
+                    <div class="art txt" title="Sorting">
+                        <div class="longt">
+                            <h2 class="hlongt">What is Sorting?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>A given list of numbers is said to be sorted if the numbers are <strong>ordered</strong>>
+                                either in <strong>ascending</strong> or <strong>descending</strong> order. By
+                                default, we sort the numbers
+                                in ascending order.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Sorting Visualization">
+                        <div class="longt">
+                            <h2 class="hlongt">Unsorted and Sorted arrays</h2>
+                        </div>
+                        <div class="description">
+                            <p>Picture shows sorted and unsorted array.</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Time and Space Complexity">
+                        <div class="longt">
+                            <h2 class="hlongt">Time and Space Complexity</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                Time complexity of an algorithm gives the measure of time taken by it to run as a function of
+                                the length of the input. Similarly, Space complexity of an algorithm quantifies the amount of
+                                space or memory taken by an algorithm to run as a function of the length of
+                                the input. <br>
+                                Recall that suppose our input is an array of N elements, and our algorithm iterates through the
+                                array once, time complexity will be O(N). If I run two embedded loops to traverse the array N
+                                times, time complexity will be O(N<sup>2</sup>).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz" title="Pre-test Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">A Quiz with Multiple Choice Questions</h2>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question1">
+                                <div class="art-body">
+                                    <p>Q1. Which of these best describes an array?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c1">
+                                    <div class="art-body">
+                                        <p>(A) A data structure that shows a hierarchical behavior</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c2">
+                                    <div class="art-body">
+                                        <p>(B) Container of objects of similar types</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c3">
+                                    <div class="art-body">
+                                        <p>(C) Container of objects of mixed types</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c4">
+                                    <div class="art-body">
+                                        <p>(D) All of the mentioned</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>An array is a data
+                                        structure, which can
+                                        store a fixed-size
+                                        collection of
+                                        elements of the same
+                                        data type.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question2">
+                                <div class="art-body">
+                                    <p>Q2. Write complexity of traversing all the elements of the array:</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(N)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(N^2)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(NLogN)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(LogN)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>For an array of
+                                        length N, you need to
+                                        traverse through all
+                                        the elements of the
+                                        array, which comprise
+                                        of N operations. Thus
+                                        the time complexity
+                                        for the same is O(N).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q3. What does it mean when we say that an algorithm X is asymptotically more
+                                        efficient than Y?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c1">
+                                    <div class="art-body">
+                                        <p>(A) X will always be a better choice for small inputs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c2">
+                                    <div class="art-body">
+                                        <p>(B) X will always be a better choice for large inputs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c3">
+                                    <div class="art-body">
+                                        <p>(C) Y will always be a better choice for small inputs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c4">
+                                    <div class="art-body">
+                                        <p>(D) X will always be a better choice for all inputs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>Performance could be
+                                        similar for small
+                                        inputs, but
+                                        definitely better for
+                                        larger inputs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question4">
+                                <div class="art-body">
+                                    Q4. int a = 0, b = 0; <br>
+                                    for (i = 0; i &lt; N;
+                                    i++) {<br>
+                                    a = a + rand();<br>
+                                    }<br>
+                                    for (j = 0; j &lt; M; j++) {<br>
+                                    b = b + rand();<br>
+                                    }<br>
+                                    <h2>What is the time and space complexity for the above code?</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(N * M) time, O(1) space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(N + M) time, O(N + M) space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(N + M) time, O(1) space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(N * M) time, O(N + M) space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>The first loop runs
+                                        for O(n) time, second
+                                        loop runs for O(m).
+                                        Constant extra space
+                                        is used for 2
+                                        variables a and b,
+                                        hence O(1) space.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lu" title="Linear Search">
+                <div class="longt">
+                    <h2 class="hlongt">Linear Search Algorithm</h2>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Linear Search Concept">
+                        <div class="longt">
+                            <h2 class="hlongt">Linear Search Concept</h2>
+                        </div>
+                        <div class="description">
+                            <p>Video for linear search on an unsorted array</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Objectives">
+                        <div class="longt">
+                            <h2 class="hlongt">Learning Objectives of this Module :</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>In this module, we will : </p>
+                            <ul>
+                                <li>Gain the intuition for searching</li>
+                                <li>Understand the need for searching</li>
+                                <li>Learn the naive way to search a random number list, namely Linear Search</li>
+                                <li>Understand the Time Complexity of Linear Search</li>
+                                <li>Test your conceptual understanding with a short quiz</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Basic Concept">
+                    <div class="longt">
+                        <h2 class="hlongt">Understanding the Linear Search Algorithm</h2>
+                    </div>
+
+                    <div class="art txt" title="Basic Intuition">
+                        <div class="longt">
+                            <h2 class="hlongt">How can we search an element in an array?</h2>
+                        </div>
+                        <div class="art-body">
+                            In linear search, we adopt the most naive method for searching.
+                            <ul>
+                                <li>
+                                    We look through the array in an orderly fashion, comparing each element with the
+                                    element we would like to find, namely the query element.
+                                </li>
+                                <li>
+                                    Whenever we find a matching element, we report the index of the matched element
+                                </li>
+                                <li>
+                                    If we have traversed the entire array and not found a matching element, we report
+                                    that the element is not present in the array.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Comparing Elements">
+                        <div class="longt">
+                            <h2 class="hlongt">When should we stop?</h2>
+                        </div>
+                        <div class="description"><br><br>
+                            Image shows scenarios to stop the search and report index of the element or failure.
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Observations">
+                        <div class="longt">
+                            <h2 class="hlongt">Important Observations</h2>
+                        </div>
+                        <div class="art-body">
+                            Let's take note of a few important observations :
+                            <ul>
+                                <li>We do not require any ordering of the elements of the array to find a particular
+                                    element in the array.</li>
+                                <li>This is because we iterate through the entire array for searching the element, so we
+                                    are guaranteed to find the element if it present in the array.</li>
+                                <li>If the element is not present in the array we are guaranteed that the algorithm
+                                    returns failure.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Demonstration-Linear">
+                        <div class="longt">
+                            <h2 class="hlongt">Step by Step Process for Searching an Element</h2>
+                        </div>
+                        <div class="description">
+                            <p>Image shows Step by Step Process for Searching an Element.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Linear Search Algorithm">
+                    <div class="longt">
+                        <h2 class="hlongt">Demonstration for Linear Search</h2>
+                    </div>
+
+                    <div class="art req" title="Linear-Search Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Linear Search Algorithm</h2>
+                        </div>
+                        <div class="description">
+                            <p>Video for Linear Search</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Observations">
+                        <div class="longt">
+                            <h2 class="hlongt">Observations</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                All the elements are compared untill a successfull match is found.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Linear Search Visualization">
+                        <div class="longt">
+                            <h2 class="hlongt">Iteration by Iteration Visualization of Linear Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Image shows Iteration by Iteration Visualization of Linear Search.</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Linear Search Algorithm</h2>
+                        </div>
+
+                        <div class="art-body">
+                            Let's have a final look at the consolidated algorithm to search for an element in an array
+                            of N elements:
+                            <ul>
+                                <li>
+                                    <b>STEP 1 : </b>Start from the leftmost element of list and one by one compare the
+                                    query element with each element of the list.
+                                </li>
+                                <li>
+                                    <b>STEP 2 : </b>If the query element matches with an element, return the index.
+                                </li>
+                                <li>
+                                    <b>STEP 3 : </b>If the query element doesn’t match with any of elements, return
+                                    failure.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Linear Search Demo">
+                    <div class="longt">
+                        <h2 class="hlongt">Demonstration for Linear Search</h2>
+                    </div>
+
+                    <div class="art req" title="Linear-Search Demo">
+                        <div class="longt">
+                            <h2 class="hlongt">Demo : Linear Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Interactive artefact where user can enter a query element and search for the element in a
+                                randomly generated list.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz" title="Linear Search Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">Revision Quiz for Linear Search</h2>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question1">
+                                <div class="art-body">
+                                    <p>Q1. When is linear searching used?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c1">
+                                    <div class="art-body">
+                                        <p>(A) When the list has only a few elements</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c2">
+                                    <div class="art-body">
+                                        <p>(B) When performing a single search in an unordered list</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c3">
+                                    <div class="art-body">
+                                        <p>(C) Used all the time</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c4">
+                                    <div class="art-body">
+                                        <p>(D) When the list has only a few elements and When performing a single search in
+                                            an unordered list</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>It is practical to
+                                        implement linear
+                                        search in the
+                                        situations mentioned
+                                        in When the list has
+                                        only a few elements
+                                        and When performing a
+                                        single search in an
+                                        unordered list, but
+                                        for larger elements
+                                        the complexity
+                                        becomes larger and it
+                                        makes sense to sort
+                                        the list and employ
+                                        binary search or
+                                        hashing.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question2">
+                                <div class="art-body">
+                                    <p>Q2. What is the best case for linear search?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(nlogn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(logn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>The element is at the head of the array, hence O(1).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q3. What is the worst case for linear search?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(nlogn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(logn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        Worst case is when the desired element is at the tail of the array or not present at
+                                        all, in this case you have to traverse till the end of the array, hence the
+                                        complexity is O(n).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q4. What is the best case and worst case complexity of ordered linear search?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(nlogn), O(logn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(logn), O(nlogn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(n), O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(1), O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        Although ordered linear search is better than unordered when the element is not
+                                        present in the array, the best and worst cases still remain the same, with the key
+                                        element being found at first position or at last position.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q5. Which of the following is a disadvantage of linear search?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) Requires more space</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) Greater time complexities compared to other searching algorithms</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) Not easy to understand</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) All of the mentioned</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        The complexity of linear search as the name suggests is O(n) which is much greater
+                                        than other searching techniques like binary search(O(logn)).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Binary Search Learning Unit Start -->
+
+            <div class="lu" title="Binary Search">
+                <div class="longt">
+                    <h2 class="hlongt">Binary Search</h2>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Binary Search Concept">
+                        <div class="longt">
+                            <h2 class="hlongt">Binary Search Algorithm</h2>
+                        </div>
+                        <div class="description">
+                            <p>Video for Binary Search Algorithm</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Objectives">
+                        <div class="longt">
+                            <h2 class="hlongt">Learning Objectives of this Module :</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>In this module, we will : </p>
+                            <br>
+                            <ul>
+                                <li>Try to speed up our search by preprocessing the array by sorting it</li>
+                                <li>Understand the prerequisites of the Binary Search algorithm</li>
+                                <li>Understand the working of the Binary Search algorithm</li>
+                                <li>Practice the algorithm</li>
+                                <li>Test your conceptual understanding with a short quiz</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Basic Concept Binary Search">
+                    <div class="longt">
+                        <h2 class="hlongt">Understanding the Binary Search Algorithm</h2>
+                    </div>
+
+                    <div class="art txt" title="Basic Intuition">
+                        <div class="longt">
+                            <h2 class="hlongt">Idea</h2>
+                        </div>
+                        <div class="art-body">
+                            The idea of binary search is to use the information that the array is sorted and reduce the
+                            time complexity to O(Log n)
+                            In Binary search, we adopt the most following strategy.
+                            <ul>
+                                <li>
+                                    Sort the array elements.
+                                </li>
+                                <li>
+                                    Search a sorted array by repeatedly dividing the search interval in half.
+                                </li>
+                                <li>
+                                    Begin with an interval covering the whole array.
+                                </li>
+                                <li>
+                                    If the value of the search key is less than the item in the middle of the interval,
+                                    narrow the interval to the lower half.
+                                </li>
+                                <li>
+                                    Otherwise narrow it to the upper half. Repeatedly check until the value is found or
+                                    the interval is empty.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Observations">
+                        <div class="longt">
+                            <h2 class="hlongt">Important Observations</h2>
+                        </div>
+                        <div class="art-body">
+                            Let's take note of a few important observations :
+                            <ul>
+                                <li>It is crucial for the element array to be sorted to be able to search for a query
+                                    element.</li>
+                                <li>We jump intervals and prune out the array intervals that we are sure will not
+                                    contain the query element</li>
+                                <li>If the element is not present in the array we are guaranteed that the algorithm
+                                    returns failure.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Demonstration-Binary">
+                        <div class="longt">
+                            <h2 class="hlongt">Step by Step Process for Binary Searching an Element</h2>
+                        </div>
+                        <div class="description">
+                            <p>Image shows Step by Step Process for Binary Searching an Element.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Binary Search Algorithm">
+                    <div class="longt">
+                        <h2 class="hlongt">Demonstration for Binary Search</h2>
+                    </div>
+
+                    <div class="art req" title="Binary-Search Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Binary Search Algorithm</h2>
+                        </div>
+                        <div class="description">
+                            <p>Video for Binary Search</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Observations">
+                        <div class="longt">
+                            <h2 class="hlongt">Observations</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                All the possible intervals' middle elements are compared to check if an element is present
+                                in the array.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Binary Search Visualization">
+                        <div class="longt">
+                            <h2 class="hlongt">Iteration by Iteration Visualization of Binary Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Image shows Iteration by Iteration Visualization of Binary Search.</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Binary Search Algorithm</h2>
+                        </div>
+
+                        <div class="art-body">
+                            Let's have a final look at the consolidated algorithm to search for an element in an array
+                            of N elements:
+                            <ul>
+                                <li>
+                                    <b>STEP 1 : </b>Start with the middle element. <br>
+                                    <ul>
+                                        <li>
+                                            If the target value is equal to the middle element of the array, then return
+                                            the index of the middle element.
+                                        </li>
+                                        <li>
+                                            If not, then compare the middle element with the target value,
+                                            <ul>
+                                                <li>
+                                                    If the target value is greater than the number in the middle index,
+                                                    then pick the elements to the right of the middle index, and start
+                                                    with Step 1.
+                                                </li>
+                                                <li>
+                                                    If the target value is less than the number in the middle index,
+                                                    then pick the elements to the left of the middle index, and start
+                                                    with Step 1.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <b>STEP 2 : </b>When a match is found, return the index of the element matched.
+                                </li>
+                                <li>
+                                    <b>STEP 3 : </b>If no match is found, then return failure.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Binary Search Demo">
+                    <div class="longt">
+                        <h2 class="hlongt">Demonstration for Binary Search</h2>
+                    </div>
+
+                    <div class="art req" title="Binary-Search Demo">
+                        <div class="longt">
+                            <h2 class="hlongt">Demo : Binary Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Interactive artefact where
+                                user can enter a query
+                                element and search for the
+                                element using binary search
+                                in a randomly generated list.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Binary Search Exercise">
+                    <div class="longt">
+                        <h2 class="hlongt">Guided Exercise for Binary Search</h2>
+                    </div>
+
+                    <div class="art req" title="Binary-Search Exercise">
+                        <div class="longt">
+                            <h2 class="hlongt">Exercise : Binary Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Interactive artefact where user can exercise Binary Search.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Binary Search Practice">
+                    <div class="longt">
+                        <h2 class="hlongt">Practice for Binary Search</h2>
+                    </div>
+
+                    <div class="art req" title="Binary-Search Practice">
+                        <div class="longt">
+                            <h2 class="hlongt">Practice : Binary Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Interactive artefact where user can practice Binary Search</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz" title="Binary Search Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">Revision Quiz for Binary Search</h2>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question1">
+                                <div class="art-body">
+                                    <p>Q1. When is the pre-requisite to Binary Search?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c1">
+                                    <div class="art-body">
+                                        <p>(A) Nothing really</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c2">
+                                    <div class="art-body">
+                                        <p>(B) Array must be sorted either in ascending or descending order</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c3">
+                                    <div class="art-body">
+                                        <p>(C) The number of values in the array are limited</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c4">
+                                    <div class="art-body">
+                                        <p>(D) The values in the array have a maximum bound value they can take</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>Binary search works
+                                        on sorted arrays.
+                                        Binary search begins
+                                        by comparing the
+                                        middle element of the
+                                        array with the target
+                                        value.  If the target
+                                        value matches the
+                                        middle element, its
+                                        position in the array
+                                        is returned.  If the
+                                        target value is less
+                                        than the middle
+                                        element, the search
+                                        continues in the
+                                        lower half of the
+                                        array.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question2">
+                                <div class="art-body">
+                                    <p>Q2. Binary Search can be categorized into which of the following?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) Brute Force technique</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) Divide and conquer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) Greedy algorithm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) Dynamic programming</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>Since ‘mid’ is calculated for every iteration or recursion, we are diving the array
+                                        into half and then try to solve the problem.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q3. Given an array arr = {5,6,77,88,99} and key = 88; How many iterations are done
+                                        until the element is found?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) 3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) 4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) 2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        Iteration1 : mid = 77; Iteration2 : mid = 88;
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q4. Given an array arr = {45,77,89,90,94,99,100} and key = 100; What are the mid
+                                        values(corresponding array elements) generated in the first and second iterations?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) 90 and 99</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) 90 and 100</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) 89 and 94</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) 94 and 99</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        Trace the input with the binary search iterative code.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q5. What is the time complexity of binary search with iteration?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(nlogn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(logn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(n<sup>2</sup>>)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        T(n) = T(n/2) + theta(1)
+                                        Using the divide and conquer master theorem, we get the time complexity as O(logn).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lu" title="Analysis">
+                <div class="longt">
+                    <h2 class="hlongt">Analysis of Search Algorithms</h2>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="art req" title="Analysis of Linear and Binary Search">
+                        <div class="longt">
+                            <h2 class="hlongt">Analysis of Linear and Binary Search</h2>
+                        </div>
+                        <div class="description">
+                            <p>Time complexity of Linear and Binary Search is explained</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Objectives">
+                        <div class="longt">
+                            <h2 class="hlongt">Learning Objectives of this Module</h2>
+                        </div>
+                        <div class="art-body">
+                            In this module, we will be learning about :
+                            <ul>
+                                <li>
+                                    <b>Time and Space Complexity</b> : We will learn about the running time of one
+                                    iteration, and then extend it to N iterations
+                                    to complete the searching process for linear and binary search.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Time and Space Complexity">
+                    <div class="longt">
+                        <h2 class="hlongt">Time and Space Complexity of Linear and Binary Search</h2>
+                    </div>
+
+                    <div class="art txt" title="Time Complexity-Linear Search">
+                        <div class="longt">
+                            <h2 class="hlongt">Running Time of Linear Search</h2>
+                        </div>
+                        <div class="art-body">
+                            A linear search scans one item at a time, without jumping to any item.
+                            <ul>
+                                <li>
+                                    The worst case complexity is O(n), sometimes known an O(n) search
+                                </li>
+                                <li>
+                                    Time taken to search elements keep increasing as the number of elements are increased.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Time Complexity-Binary Search">
+                        <div class="longt">
+                            <h2 class="hlongt">Running Time of Binary Search</h2>
+                        </div>
+                        <div class="art-body">
+                            A binary search cuts down
+                            your search to half as soon
+                            as you find middle of a
+                            sorted list.
+                            <ul>
+                                <li>
+                                    The middle element
+                                    is looked to check
+                                    if it is greater
+                                    than or less than
+                                    the value to be
+                                    searched.
+                                </li>
+                                <li>
+                                    Accordingly, search
+                                    is done to either
+                                    half of the given
+                                    list.
+                                </li>
+                                <li>
+                                    The worst case time
+                                    complexity is
+                                    O(logn).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Space Complexity-Linear Search">
+                        <div class="longt">
+                            <h2 class="hlongt">Space Complexity of Linear Search</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                No auxiallary space is
+                                required in linear
+                                search. The elements of the
+                                array are directly compared
+                                with the query element to
+                                find a match.  Thus the
+                                space complexity for the
+                                same is <strong>O(1)</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Space Complexity-Binary Search">
+                        <div class="longt">
+                            <h2 class="hlongt">Space Complexity of Iterative Binary Search</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                You need to maintain a
+                                start, end and middle
+                                variable to know the window
+                                of elements you are
+                                checking. Thus constant
+                                space is required to perform
+                                iterative binary
+                                search. Thus the space
+                                complexity for the same is <strong>O(1)</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz" title="Analysis Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">A Quiz with Multiple Choice Questions</h2>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question1">
+                                <div class="art-body">
+                                    <p>Q1. 32 teams
+                                        qualified for the
+                                        2014 World Cup. If
+                                        the names of the
+                                        teams were arranged
+                                        in sorted order (an
+                                        array), how many
+                                        items in the array
+                                        would binary search
+                                        have to examine to
+                                        find the location of
+                                        a particular team in
+                                        the array, in the
+                                        worst case?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c1">
+                                    <div class="art-body">
+                                        <p>(A) At most, 1.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c2">
+                                    <div class="art-body">
+                                        <p>(B) At most, 16.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c3">
+                                    <div class="art-body">
+                                        <p>(C) At most, 6.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c4">
+                                    <div class="art-body">
+                                        <p>(D) At most, 32.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>Trace the binary search algorithm.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question2">
+                                <div class="art-body">
+                                    <p>Q2. What is lg(32), the base-2 logarithm of 32?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) 5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) 32</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) 16</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>ln2(32) = 5
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question2">
+                                <div class="art-body">
+                                    <p>Q3. You have an array
+                                        containing the prime
+                                        numbers from 2 to 311
+                                        in sorted order: [2,
+                                        3, 5, 7, 11, 13, ...,
+                                        307, 311]. There are
+                                        64 items in the
+                                        array.  About how
+                                        many items of the
+                                        array would binary
+                                        search have to
+                                        examine before
+                                        concluding that 52 is
+                                        not in the array, and
+                                        therefore not prime?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) 7</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) 128</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) 22</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>Trace the binary search algorithm.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lu" title="Post Test">
+                <div class="longt">
+                    <h2 class="hlongt">Post Test of the Experiment</h2>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Instructions">
+                        <div class="longt">
+                            <h2 class="hlongt">Instructions for Quiz</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Post Test includes questions
+                                on entire experiment
+                                concepts. Read the questions
+                                in the quiz section and
+                                select the correct option
+                                from the ones
+                                provided. Please note that
+                                some questions may have more
+                                than one correct response.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz" title="Post Test Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">A Quiz with Multiple Choice Questions</h2>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question1">
+                                <div class="art-body">
+                                    <p>Q1. Which of the following is correct recurrence for worst case of Binary Search?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c1">
+                                    <div class="art-body">
+                                        <p>(A) T(n) = 2T(n/2) + O(1) and T(1) = T(0) = O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c2">
+                                    <div class="art-body">
+                                        <p>(B) T(n) = T(n-1) + O(1) and T(1) = T(0) = O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c3">
+                                    <div class="art-body">
+                                        <p>(C) T(n) = T(n/2) + O(1) and T(1) = T(0) = O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q1-c4">
+                                    <div class="art-body">
+                                        <p>(D) T(n) = T(n-2) + O(1) and T(1) = T(0) = O(1)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>In Binary Search, we
+                                        first compare the
+                                        given element x with
+                                        middle of the
+                                        array. If x matches
+                                        with middle element,
+                                        then we return middle
+                                        index.  Otherwise, we
+                                        either recur for left
+                                        half of array or
+                                        right half of array.
+                                        So recurrence is T(n)
+                                        = T(n/2) + O(1)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question2">
+                                <div class="art-body">
+                                    <p>Q2. Given a sorted
+                                        array of integers,
+                                        what can be the
+                                        minimum worst case
+                                        time complexity to
+                                        find ceiling of a
+                                        number x in given
+                                        array? Ceiling of an
+                                        element x is the
+                                        smallest element
+                                        present in array
+                                        which is greater
+                                        than or equal to
+                                        x. Ceiling is not
+                                        present if x is
+                                        greater than the
+                                        maximum element
+                                        present in array.
+                                        For example, if the
+                                        given array is {12,
+                                        67, 90, 100, 300,
+                                        399} and x = 95,
+                                        then output should
+                                        be 100.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(LogLogn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(Logn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(Logn * Logn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>We modify standard
+                                        binary search to find
+                                        ceiling. The time
+                                        complexity T(n) can
+                                        be written as T(n)
+                                        &le; T(n/2) + O(1)
+                                        Solution of above
+                                        recurrence can be
+                                        obtained by Master
+                                        Method. It falls in
+                                        case 2 of Master
+                                        Method. Solution is
+                                        O(Logn).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question3">
+                                <div class="art-body">
+                                    <p>Q3. Consider a sorted
+                                        array of n
+                                        numbers. What would
+                                        be the time
+                                        complexity of the
+                                        best known algorithm
+                                        to find a pair a and
+                                        b such that |a-b| = k
+                                        , k being a positive
+                                        integer.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) O(nlogn)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c3">
+                                    <div class="art-body">
+                                        <p>(C) O(n<sup>2</sup>>)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c4">
+                                    <div class="art-body">
+                                        <p>(D) O(n)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>Just maintain two
+                                        pointers at the start
+                                        and accordingly
+                                        increment one of them
+                                        depending upon
+                                        whether difference is
+                                        less than or greater
+                                        than k.Just a single
+                                        pass is required so
+                                        the answer is O(n).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mcq">
+                        <div class="preamble">
+                            <div class="art txt" title="question4">
+                                <div class="art-body">
+                                    <p>Q4. Like linear
+                                        search and binary
+                                        search, ternary
+                                        search is a searching
+                                        technique that is
+                                        used to determine the
+                                        position of a
+                                        specific value in an
+                                        array. In binary
+                                        search, the sorted
+                                        array is divided into
+                                        two parts while in
+                                        ternary search, it is
+                                        divided into 3 parts
+                                        and then you
+                                        determine in which
+                                        part the element
+                                        exists. <br>
+                                        Ternary search, like
+                                        binary search, is a
+                                        divide-and-conquer
+                                        algorithm. It is
+                                        mandatory for the
+                                        array (in which you
+                                        will search for an
+                                        element) to be sorted
+                                        before you begin the
+                                        search.<br><br>
+                                        Is the following
+                                        statement correct?
+                                        "Ternary Search is
+                                        better than Binary
+                                        Search"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="false">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c1">
+                                    <div class="art-body">
+                                        <p>(A) True</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choice" data-correct="true">
+                            <div class="preamble">
+                                <div class="art txt" title="q2-c2">
+                                    <div class="art-body">
+                                        <p>(B) False</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explanation">
+                            <div class="art txt" title="Explanation">
+                                <div class="art-body">
+                                    <p>
+                                        From the first look,
+                                        it seems the ternary
+                                        search does less
+                                        number of
+                                        comparisons as it
+                                        makes Log3n
+                                        recursive calls, but
+                                        binary search makes
+                                        Log2n recursive
+                                        calls. Let us take a
+                                        closer look.<br>
+                                        The following is
+                                        recursive formula
+                                        for counting
+                                        comparisons in worst
+                                        case of Binary
+                                        Search.<br><br> 
+                                        <strong>T(n) = T(n/2) + 2,  T(1) = 1</strong><br><br>
+                                        The following is
+                                        recursive formula
+                                        for counting
+                                        comparisons in worst
+                                        case of Ternary
+                                        Search.
+                                        <strong>T(n) = T(n/3) + 4, T(1) = 1</strong> <br><br>
+                                        In binary search,
+                                        there are 2Log2n + 1
+                                        comparisons in worst
+                                        case. In ternary
+                                        search, there are
+                                        4Log3n + 1
+                                        comparisons in worst
+                                        case.
+                                        <br>Time Complexity for Binary search = 2clog2n + O(1)
+                                        <br>Time Complexity for Ternary search = 4clog3n + O(1)
+                                        <br>Therefore, the
+                                        comparison of
+                                        Ternary and Binary
+                                        Searches boils down
+                                        the comparison of
+                                        expressions 2Log3n
+                                        and Log2n . The
+                                        value of 2Log3n can
+                                        be written as (2 /
+                                        Log23) * Log2n
+                                        . Since the value of
+                                        (2 / Log23) is more
+                                        than one, Ternary
+                                        Search does more
+                                        comparisons than
+                                        Binary Search in
+                                        worst case.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lu" title="Feedback">
+                <div class="longt">
+                    <h2 class="hlongt">Feedback of the Experiment</h2>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Feedback Form">
+                        <div class="longt">
+                            <h2 class="hlongt">Feedback Form of the Experiment</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>The experiment ends
+                                here,thanks for
+                                participating..! Please fill
+                                in the form.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lu" title="Further Readings/References">
+                <div class="longt">
+                    <h2 class="hlongt">Further Readings and References of the Experiment</h2>
+                </div>
+
+                <div class="preamble">
+                    <div class="art txt" title="Explore">
+                        <div class="longt">
+                            <h2 class="hlongt">Explore More About Binary Search</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>You can explore more about
+                                Binary Search Experiment
+                                through following resources:
+                            </p><br>
+                            <b>Useful Links :</b>
+                            <ul>
+                                <li><a href="https://www.geeksforgeeks.org/binary-search/">Coding implementation of Binary Search</a></li>
+                                <li><a href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/tutorial/">Linear Search Writeup</a></li>
+                                <li><a href="https://www.hackerearth.com/practice/algorithms/searching/binary-search/tutorial/">Binary Search Writeup</a></li>
+                                <li><a href="https://www.hackerearth.com/practice/algorithms/searching/ternary-search/tutorial/">Ternary Search Writeup</a></li>
+
+                            </ul>
+                            <b>Quizzes :</b>
+                            <ul>
+                                <li><a href="https://www.geeksforgeeks.org/algorithms-gq/searching-gq/">Online Quiz on Searching</a>
+                                    <li><a href="https://www.educative.io/collection/page/10370001/760001/1300001">Online Quiz on Binary Search</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./js/loader.js"></script>
+    </body>
+</html>
